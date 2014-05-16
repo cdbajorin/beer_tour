@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  zipcode: 1
+  bio: MyText
+  lat: 9.99
+  long: 9.99
+  password: MyString
+
+two:
+  username: MyString
+  zipcode: 1
+  bio: MyText
+  lat: 9.99
+  long: 9.99
+  password: MyString
