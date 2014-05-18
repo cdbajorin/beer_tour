@@ -1,4 +1,6 @@
 
+
+################# DB EDITING FOR LOCAL BREWERIES ###########################
 # url = "http://api.brewerydb.com/v2/search/geo/point?key=#{BREWERYDB_CLIENT_ID}&lat=40.77&lng=-73.95&radius=100"
 # breweries = HTTParty.get(url)
 # breweries["data"].each do |b|
@@ -24,8 +26,6 @@
 #     b.delete
 #   end
 # end
-
-
 
 # breweries.each do |b|
 #   url = "http://api.brewerydb.com/v2/brewery/#{b.brewery_id}/beers?key=#{BREWERYDB_CLIENT_ID}"
@@ -62,4 +62,17 @@
 #   else
 #     "unsuccessful on #{brewery.id}"
 #   end
+#   brewery.save
 # end
+############################ END BREWERY EDITING ################
+
+
+User.delete_all
+
+5.times do
+  User.create({
+    name: Faker::Internet.user_name,
+    zipcode: Faker::Address.zip,
+    bio: Faker::Lorem.paragraphs(1).join("")
+    })
+end
