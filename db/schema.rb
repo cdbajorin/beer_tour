@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518021625) do
+ActiveRecord::Schema.define(version: 20140518160506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "breweries", force: true do |t|
-    t.string  "brewery_id"
+    t.string  "breweryId"
     t.string  "name"
-    t.string  "street_address"
+    t.string  "streetAddress"
     t.string  "city"
     t.string  "state"
     t.integer "zipcode"
     t.float   "latitude"
     t.float   "longitude"
     t.float   "distance"
-    t.boolean "british_ale"
-    t.boolean "irish_ale"
-    t.boolean "american_ale"
-    t.boolean "german_ale"
-    t.boolean "belgian_ale"
-    t.boolean "european_lager"
-    t.boolean "american_lager"
+    t.boolean "britishAle"
+    t.boolean "irishAle"
+    t.boolean "americanAle"
+    t.boolean "germanAle"
+    t.boolean "belgianAle"
+    t.boolean "europeanLager"
+    t.boolean "americanLager"
   end
 
   create_table "users", force: true do |t|
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(version: 20140518021625) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "street_address"
+    t.string   "streetAddress"
     t.string   "city"
     t.string   "state"
+    t.string   "fullStreetAddress"
   end
 
 end
