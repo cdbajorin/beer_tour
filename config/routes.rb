@@ -16,7 +16,10 @@ Rails.application.routes.draw do
 
   # get '/tours' => "tours#index"
 
-  # get '/tours/new' => "tours#new"
+  get '/tours/new' => "tours#new"
+
+  post '/tours/:tour_id' => "tours#view"
+
 
 
 

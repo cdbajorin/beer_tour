@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
 
 validates :username, uniqueness: true
 
+has_many :tours
+has_many :likes, through :tours
+
+
   def generate_new_user(user_hash)
     self.username = user_hash[:username]
     self.streetAddress = user_hash[:streetAddress]
