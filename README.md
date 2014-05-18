@@ -58,4 +58,4 @@ USAGE
 
 
 ### Call for beers available
-* **beers at brewery**
+* **beers at brewery** url = "http://api.brewerydb.com/v2/brewery/#{brewery.b_name_id}/beers?key=#{BREWERYDB_CLIENT_ID}&withBreweries=Y"

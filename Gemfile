@@ -31,6 +31,7 @@ gem 'json'
 gem 'pry'
 gem 'pry-rails'
 gem 'geocoder'
+gem 'awesome_print'
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password

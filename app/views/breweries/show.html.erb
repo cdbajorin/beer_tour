@@ -1,0 +1,48 @@
+<div class="brewery_summary">
+<h3><%= @brewery.name %></h3>
+
+<div class="address">
+  <p><%= @brewery.street_address %>
+    <%= @brewery.city %>, <%= @brewery.state %> <%= @brewery.zipcode %>
+  </p>
+
+
+<div class="beer_results">
+<% if @beer_hash["status"] == "success" %>
+  <ul>
+    <% @beer_hash["data"].each do |beer| %>
+      <% if beer.has_key?("style") %>
+        <div class="beer_image">
+          <% if beer.has_key?("labels") %>
+            <img src="<%=beer['labels']['icon']%>">
+          <%end%>
+        </div>
+
+        <li>
+          <div class="beer_name">
+            <%= beer["name"] %>
+          </div>
+
+          <p class="beer_style_and_description">
+
+            <% if beer["style"].has_key?("name") %>
+              <%= beer["style"]["name"] %>
+            <% elsif beer["style"]["category"].has_key?("name") %>
+              <%= beer["style"]["category"]["name"] %>
+            <%end%>
+
+            <% if beer.has_key?("description") %>
+              <%= beer["description"] %>
+            <% elsif beer["style"].has_key?("description") %>
+              <%= beer["style"]["description"] %>
+            <%end%>
+          </p>
+        </li>
+      <%end%>
+    <%end%>
+  </ul>
+<%else%>
+  <p>We apologize, our server is experiencing issues. Please try again in a few moments.</p>
+<%end%>
+</div>
+
