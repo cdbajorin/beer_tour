@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+
+
+  root to: "home#index"
+
+  get '/users' => "users#index"
+
+  get '/users/:username' => "users#user"
+
+  get '/users/:username/tours' => "users#tours"
+
+  get '/tours' => "tours#index"
+
+  get '/tours/new' => "tours#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

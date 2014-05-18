@@ -30,6 +30,7 @@ gem 'httparty'
 gem 'json'
 gem 'pry'
 gem 'pry-rails'
+gem 'geocoder'
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
