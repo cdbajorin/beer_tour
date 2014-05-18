@@ -6,9 +6,9 @@
 # breweries["data"].each do |b|
 #   if b["openToPublic"] == "Y"
 #     Brewery.create({
-#       brewery_id: b["brewery"]["id"],
+#       breweryId: b["brewery"]["id"],
 #       name: b["brewery"]["name"],
-#       street_address: b["streetAddress"],
+#       streetAddress: b["streetAddress"],
 #       city: b["locality"],
 #       state: b["region"],
 #       zipcode: b["postalCode"],
@@ -22,7 +22,7 @@
 # breweries = Brewery.all
 
 # breweries.each do |b|
-#   if b.street_address == nil
+#   if b.streetAddress == nil
 #     b.delete
 #   end
 # end
@@ -43,19 +43,19 @@
 #       if beer.has_key?("style")
 #         x = beer["style"]["categoryId"]
 #         if x == 1
-#           brewery.british_ale = true
+#           brewery.britishAle = true
 #         elsif x == 2
-#           brewery.irish_ale = true
+#           brewery.irishAle = true
 #         elsif x == 3
-#           brewery.american_ale = true
+#           brewery.americanAle = true
 #         elsif x == 4
-#           brewery.german_ale = true
+#           brewery.germanAle = true
 #         elsif x == 5
-#           brewery.belgian_ale = true
+#           brewery.belgianAle = true
 #         elsif x == 7
-#           brewery.european_lager = true
+#           brewery.europeanLager = true
 #         elsif x == 8
-#           brewery.american_lager = true
+#           brewery.americanLager = true
 #         end
 #       end
 #     end
@@ -67,7 +67,7 @@
 ############################ END BREWERY EDITING ################
 
 
-User.delete_all
+User.deleteAll
 
 5.times do
   User.create({

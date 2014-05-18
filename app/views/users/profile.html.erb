@@ -1,0 +1,23 @@
+
+<h2 class="username_name">
+  <%= @user.username %>
+</h2>
+<p class="user_address">
+  <% if @user.streetAddress != "" %>
+    <%= @user.streetAddress%>
+    <%end%> <br>
+  <% if @user.city != "" %>
+    <%= "#{@user.city}," %>
+    <%end%>
+  <% if @user.state != "" %>
+    <%= @user.state%>
+    <%end%>
+    <% if @user.zipcode != "" %>
+    <%= @user.zipcode%>
+    <%end%>
+</p>
+
+<p class="user_bio">
+  <% if @user.bio != "" %>
+  <%= @user.bio %>
+  <%end%>

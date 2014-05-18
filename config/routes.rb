@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   post '/users' => "users#create"
 
-  # get '/users/:username' => "users#profile"
+  get '/users/:username' => "users#profile"
 
   # get '/users/:username/tours' => "users#tours"
 
