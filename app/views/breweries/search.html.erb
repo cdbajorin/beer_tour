@@ -2,25 +2,25 @@
   <%= label_tag(:distance, "Distance (max 100):") %>
   <%= text_field_tag :distance %> <br>
 
-  <%= radio_button_tag(:beer, :britishAle) %>
+  <%= radio_button_tag(:beer, "british_ale") %>
   <%= label_tag(:beer_BA, "British Ale") %>
 
-  <%= radio_button_tag(:beer, "irishAle") %>
+  <%= radio_button_tag(:beer, "irish_ale") %>
   <%= label_tag(:beer_IA, "Irish Ale") %>
 
-  <%= radio_button_tag(:beer, "americanAle") %>
+  <%= radio_button_tag(:beer, "american_ale") %>
   <%= label_tag(:beer_AA, "American Ale") %>
 
-  <%= radio_button_tag(:beer, "germanAle") %>
+  <%= radio_button_tag(:beer, "german_ale") %>
   <%= label_tag(:beer_GA, "German Ale") %><br>
 
-  <%= radio_button_tag(:beer, "belgianAle") %>
+  <%= radio_button_tag(:beer, "belgian_ale") %>
   <%= label_tag(:beer_BA, "Belgian Ale") %>
 
-  <%= radio_button_tag(:beer, "europeanLager") %>
+  <%= radio_button_tag(:beer, "european_lager") %>
   <%= label_tag(:beer_EL, "European Lager") %>
 
-  <%= radio_button_tag(:beer, "britishAle") %>
+  <%= radio_button_tag(:beer, "american_lager") %>
   <%= label_tag(:beer_AL, "American Lager") %><br>
 
   <%= submit_tag("Search") %>

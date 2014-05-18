@@ -22,9 +22,10 @@ Rails.application.routes.draw do
     # to select to populate a new page with the chosen breweries
   get '/breweries/search' => "breweries#search"
 
-  # post '/breweries/search' => "breweries#results"
+  get '/breweries/search/results' => "breweries#results"
 
-  get 'breweries/search/results' => "breweries#results"
+  get '/breweries/:b_name_id' => "breweries#show"
+
 
 
 

@@ -1,0 +1,13 @@
+<div class="brewery_list">
+  <ul>
+     <% @results.each do |brewery| %>
+     <div class="brewery_each">
+      <li><a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
+        <p><%= brewery.street_address %>
+          <%= brewery.city %>, <%=brewery.state %> <%= brewery.zipcode %>
+        </p>
+      </li>
+    </div>
+    <%end%>
+  </ul>
+</div>
