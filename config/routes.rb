@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+# <%= f.hidden_field :user_id, {value: user.id} %>
 
   root to: "users#index"
 
@@ -14,12 +14,17 @@ Rails.application.routes.draw do
 
   # get '/users/:username/tours' => "users#tours"
 
-  # get '/tours' => "tours#index"
+  # get '/tours/new' => "tours#new"
 
-  get '/tours/new' => "tours#new"
+  # post '/tours/:tour_id' => "tours#view"
 
-  post '/tours/:tour_id' => "tours#view"
+    # search form when creating tours. Will be able
+    # to select to populate a new page with the chosen breweries
+  get '/breweries/search' => "breweries#search"
 
+  # post '/breweries/search' => "breweries#results"
+
+  get 'breweries/search/results' => "breweries#results"
 
 
 

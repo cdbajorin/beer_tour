@@ -1,0 +1,28 @@
+<p><%= form_tag("/breweries/search/results", method: "get") do %>
+  <%= label_tag(:distance, "Distance (max 100):") %>
+  <%= text_field_tag :distance %> <br>
+
+  <%= radio_button_tag(:beer, :britishAle) %>
+  <%= label_tag(:beer_BA, "British Ale") %>
+
+  <%= radio_button_tag(:beer, "irishAle") %>
+  <%= label_tag(:beer_IA, "Irish Ale") %>
+
+  <%= radio_button_tag(:beer, "americanAle") %>
+  <%= label_tag(:beer_AA, "American Ale") %>
+
+  <%= radio_button_tag(:beer, "germanAle") %>
+  <%= label_tag(:beer_GA, "German Ale") %><br>
+
+  <%= radio_button_tag(:beer, "belgianAle") %>
+  <%= label_tag(:beer_BA, "Belgian Ale") %>
+
+  <%= radio_button_tag(:beer, "europeanLager") %>
+  <%= label_tag(:beer_EL, "European Lager") %>
+
+  <%= radio_button_tag(:beer, "britishAle") %>
+  <%= label_tag(:beer_AL, "American Lager") %><br>
+
+  <%= submit_tag("Search") %>
+  <%end%>
+</p>
