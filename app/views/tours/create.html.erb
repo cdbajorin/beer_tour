@@ -1,0 +1,14 @@
+
+<ul class="tour_summary"
+  <% @tour_array.each do |b| %>
+  <% brewery = Brewery.find_by_b_name_id(b) %>
+  <div class="brewery_each">
+    <li>
+      <a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
+      <p><%= brewery.street_address %>
+        <%= brewery.city %>, <%=brewery.state %> <%= brewery.zipcode %>
+      </p>
+    </li>
+  </div>
+  <%end%>
+</ul>
