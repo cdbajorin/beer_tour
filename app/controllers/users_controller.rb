@@ -13,14 +13,30 @@ class UsersController < ApplicationController
     user.generate_new_user(user_hash)
     user.convert
       if user.valid?
-        # log the user in when they register
-        @current_user = user
-        redirect_to "/users/#{user.username}"
-        # redirect_to "/user/login"
+        binding.pry
+        redirect_to "/users/login"
       else
-        render text: "<h3>username is already taken!</h3><br><a href='/users/new'>Home</a>"
-
+        binding.pry
+        render text: "<h3>username is already taken!</h3><br><a href='/users/new'>Back</a>"
       end
+  end
+
+  def login
+    @user = User.new
+  end
+
+  def process_login
+    username = params[:username]
+    password = params[:password]
+
+    @current_user = User.authenticate(username, password)
+
+    if @current_user
+      # redirect_to
+      render text: "temp works"
+    else
+      render text: "Login Failed! Invalid email or password!"
+    end
   end
 
   def profile

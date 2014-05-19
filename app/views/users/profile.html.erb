@@ -3,8 +3,8 @@
   <%= @user.username %>
 </h2>
 <p class="user_address">
-  <% if @user.streetAddress != "" %>
-    <%= @user.streetAddress%>
+  <% if @user.street_address != "" %>
+    <%= @user.street_address%>
     <%end%> <br>
   <% if @user.city != "" %>
     <%= "#{@user.city}," %>

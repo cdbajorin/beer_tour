@@ -10,11 +10,21 @@ Rails.application.routes.draw do
 
   post '/users' => "users#create"
 
+  get '/users/login' => "users#login", as: :user_login
+
+  post '/users/login' => "users#process_login"
+
   get '/users/:username' => "users#profile"
+
+  resources :users
+
+
 
   # get '/users/:username/tours' => "users#tours"
 
   get '/tours/create' => "tours#create"
+
+
 
   # post '/tours/:tour_id' => "tours#view"
 
