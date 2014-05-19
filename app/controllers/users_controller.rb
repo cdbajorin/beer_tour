@@ -18,7 +18,8 @@ class UsersController < ApplicationController
         redirect_to "/users/#{user.username}"
         # redirect_to "/user/login"
       else
-        render text: "username is already taken!"
+        render text: "<h3>username is already taken!</h3><br><a href='/users/new'>Home</a>"
+
       end
   end
 

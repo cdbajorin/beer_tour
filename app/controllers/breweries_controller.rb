@@ -15,11 +15,6 @@ class BreweriesController < ApplicationController
     url = "http://api.brewerydb.com/v2/brewery/#{@brew_id}/beers?key=#{BREWERYDB_CLIENT_ID}"
     @beer_hash = HTTParty.get(url)
     @brewery = Brewery.find_by_b_name_id(@brew_id)
-    # binding.pry
-    ### To add to HTML page
-#     </div class="brewery_bio">
-#       <%= @brewery.bio %>
-#     </div>
   end
 
 end
