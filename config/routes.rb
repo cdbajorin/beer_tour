@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # get '/users/:username/tours' => "users#tours"
 
-  # get '/tours/new' => "tours#new"
+  get '/tours/create' => "tours#create"
 
   # post '/tours/:tour_id' => "tours#view"
 

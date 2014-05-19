@@ -1,8 +1,12 @@
 <div class="brewery_list">
+<%= form_tag("/tours/create", method: "get") do %>
+  <%= submit_tag("Add Breweries") %>
   <ul>
      <% @results.each do |brewery| %>
      <div class="brewery_each">
-      <li><a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
+      <li>
+        <%= check_box_tag("brewery_list[]", brewery.b_name_id) %>
+        <a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
         <p><%= brewery.street_address %>
           <%= brewery.city %>, <%=brewery.state %> <%= brewery.zipcode %>
         </p>
@@ -10,4 +14,6 @@
     </div>
     <%end%>
   </ul>
+  <%end%>
+  <%= submit_tag("Add Breweries") %>
 </div>
