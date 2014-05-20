@@ -10,13 +10,18 @@ Rails.application.routes.draw do
 
   post '/users' => "users#create"
 
-  get '/users/login' => "users#login", as: :user_login
+  get '/users/login' => "users#login"#, as: :user_login
 
-  post '/users/login' => "users#process_login"
+  # post '/users/login' => "sessions#create"
 
   get '/users/:username' => "users#profile"
 
-  resources :users
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  # get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+
+resources :users
+resources :sessions
 
 
 

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-
   end
 
   def new
@@ -8,17 +7,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_hash = params[:user]
-    user = User.new
-    user.generate_new_user(user_hash)
-    user.convert
-      if user.valid?
-        binding.pry
-        redirect_to "/users/login"
-      else
-        binding.pry
-        render text: "<h3>username is already taken!</h3><br><a href='/users/new'>Back</a>"
-      end
+    @user = User.new(user_params)
+    # binding.pry
+    # @user.generate_new_user(user_params)
+    @user.convert
+    if @user.save
+      redirect_to user_login_path, :notice => "signed up!"
+    else
+      # render: "new"
+    end
   end
 
   def login
@@ -28,8 +25,6 @@ class UsersController < ApplicationController
   def process_login
     username = params[:username]
     password = params[:password]
-
-    @current_user = User.authenticate(username, password)
 
     if @current_user
       # redirect_to
@@ -43,5 +38,11 @@ class UsersController < ApplicationController
     @user = User.find_by_username(params[:username])
   end
 
+  private
+
+    def user_params
+
+      params.require(:user).permit(:username, :password, :street_address, :city, :state, :zipcode, :bio, :password_confirmation)
+    end
 
 end
