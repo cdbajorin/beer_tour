@@ -26,7 +26,9 @@ def new_session
     success = user.authenticate(params[:password])
     if success
       session[:user_id] = user.id
+      Tour.update_distances(current_user)
       redirect_to "/users/#{user.username}", :notice => "Logged in!"
+
     else
       flash.now.alert = "Invalid email or password"
       render "login"
@@ -49,7 +51,6 @@ def new_session
     @user = User.find_by_username(params[:username])
     tour = Tour.find_by_id(params[:id])
     @tour_array = tour.stops.split(",")
-    binding.pry
   end
 
   private

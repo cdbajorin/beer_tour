@@ -15,11 +15,12 @@ class ToursController < ApplicationController
     tour.user_id = current_user.id
     tour.origin_lat = current_user.latitude
     tour.origin_long = current_user.longitude
-    binding.pry
     tour.save
     redirect_to "/users/#{current_user.username}", :notice => "Tour created!"
   end
 
-
-
+  def search
+    @tours = Tour.update_distances(current_user)
+    binding.pry
+  end
 end
