@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-# <%= f.hidden_field :user_id, {value: user.id} %>
-
   root to: "users#index"
 
   get '/users' => "users#index"
@@ -10,26 +8,24 @@ Rails.application.routes.draw do
 
   post '/users' => "users#create"
 
-  get '/users/login' => "users#login"#, as: :user_login
+  get '/users/login' => "users#login"
 
-  # post '/users/login' => "sessions#create"
+  post 'users/login' => "users#new_session"
 
   get '/users/:username' => "users#profile"
 
+  get '/users/:username/tours' => "users#tours"
+
   get "log_out" => "sessions#destroy", :as => "log_out"
-  # get "log_in" => "sessions#new", :as => "log_in"
+
   get "sign_up" => "users#new", :as => "sign_up"
 
 resources :users
 resources :sessions
 
+  get '/tours/new' => "tours#new_session"
 
-
-  # get '/users/:username/tours' => "users#tours"
-
-  get '/tours/create' => "tours#create"
-
-
+  post '/tours/create'=> "tours#added"
 
   # post '/tours/:tour_id' => "tours#view"
 

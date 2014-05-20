@@ -9,7 +9,9 @@
 <body>
   <h1>Beer Tour</h1>
   <nav>
-    <p><a href="/breweries/search">New Tour<a> | <a href="/users/new">New User</a></p>
+    <p><a href="/breweries/search">New Tour<a>
+      <a href="/users/new"> | New User</a>
+    </p>
     <div id="user_nav">
   <% if current_user %>
     Logged in as <%= current_user.username %>.

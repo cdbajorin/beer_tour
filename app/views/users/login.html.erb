@@ -1,5 +1,5 @@
-<%= form_tag sessions_path do %>
-  <%= text_field_tag "username", nil, { placeholder: "username" } %>
+<%= form_tag '/users/login' do %>
+  <%= text_field_tag "username", nil, {value: nil, placeholder: "username" } %>
   <%= password_field_tag "password", nil, { placeholder: "password" } %>
   <%= submit_tag "Login" %>
 <% end %>

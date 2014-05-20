@@ -1,5 +1,5 @@
 <div class="brewery_list">
-<%= form_tag("/tours/create", method: "get") do %>
+<%= form_tag("/tours/new", method: "get") do %>
   <%= submit_tag("Add Breweries") %>
   <ul>
      <% @results.each do |brewery| %>

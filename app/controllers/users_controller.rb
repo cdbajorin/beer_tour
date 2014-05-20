@@ -22,27 +22,35 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def process_login
-    username = params[:username]
-    password = params[:password]
-
-    if @current_user
-      # redirect_to
-      render text: "temp works"
+def new_session
+    user = User.find_by_username(params[:username])
+    success = user.authenticate(params[:password])
+    if success
+      session[:user_id] = user.id
+      redirect_to "/users/#{user.username}", :notice => "Logged in!"
     else
-      render text: "Login Failed! Invalid email or password!"
+      flash.now.alert = "Invalid email or password"
+      render "login"
+      # redirect_to users_login_path
     end
   end
+
 
   def profile
     @user = User.find_by_username(params[:username])
   end
 
+  # def new_tour
+
+  #   @user = User.find_by_username
+
+  # end
+
   private
 
     def user_params
 
-      params.require(:user).permit(:username, :password, :street_address, :city, :state, :zipcode, :bio, :password_confirmation)
+      params.require(:user).permit(:password, :street_address, :city, :state, :zipcode, :username, :bio, :password_confirmation)
     end
 
 end
