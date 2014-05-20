@@ -29,8 +29,7 @@ resources :sessions
 
   get '/tours/search' => "tours#search"
 
-  post '/tours/search' => "tours#show"
-  # post '/tours/:tour_id' => "tours#view"
+  post '/tours/search' => "tours#favorite"
 
     # search form when creating tours. Will be able
     # to select to populate a new page with the chosen breweries

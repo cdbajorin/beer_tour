@@ -20,7 +20,20 @@ class ToursController < ApplicationController
   end
 
   def search
-    @tours = Tour.update_distances(current_user)
+    @results = Tour.where.not(user_id: current_user.id)
+  end
+
+  def favorite
     binding.pry
+
+    tours_array = params[:tour_list]
+    tours_array.each do |tour|
+      Tour.find(tour).user_id
+      binding.pry
+      favorite = Favorite.new(tour_id: tour, user_id: Tour.find(tour).user_id)
+      binding.pry
+    end
+
+  # def results
   end
 end

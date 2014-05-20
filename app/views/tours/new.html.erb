@@ -1,10 +1,8 @@
-
-
 <div class="tour_form">
   <%= form_tag '/tours/create' do %>
   <%= text_field_tag "name", nil, {value: nil, placeholder: "name" } %>
   <%= text_area_tag "description", nil, { placeholder: "description" } %>
-    <%= hidden_field_tag "stops", (@tour_string) %>
+  <%= hidden_field_tag "stops", (@tour_string) %>
   <%= submit_tag "create" %>
 
 
