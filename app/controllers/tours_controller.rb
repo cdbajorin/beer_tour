@@ -7,8 +7,17 @@ class ToursController < ApplicationController
     # @current_tour.stops = tour_string
   end
 
-  def current
+  def create
+    binding.pry
+    tour = Tour.new
+    tour.name = params[:name]
+    tour.stops = params[:stops]
+    tour.description = params[:description]
+    tour.user_id = current_user.id
+    tour.save
+    redirect_to "/users/#{current_user.username}", :notice => "Tour created!"
   end
+
 
 
 end

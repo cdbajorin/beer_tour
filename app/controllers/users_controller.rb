@@ -24,14 +24,13 @@ class UsersController < ApplicationController
 
 def new_session
     user = User.find_by_username(params[:username])
-    success = user.authenticate(params[:password])
+    success = user.authenticate(params[:username], params[:password])
     if success
       session[:user_id] = user.id
       redirect_to "/users/#{user.username}", :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
       render "login"
-      # redirect_to users_login_path
     end
   end
 
@@ -39,12 +38,6 @@ def new_session
   def profile
     @user = User.find_by_username(params[:username])
   end
-
-  # def new_tour
-
-  #   @user = User.find_by_username
-
-  # end
 
   private
 

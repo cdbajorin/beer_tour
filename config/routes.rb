@@ -10,22 +10,20 @@ Rails.application.routes.draw do
 
   get '/users/login' => "users#login"
 
-  post 'users/login' => "users#new_session"
+  post '/users/login' => "users#new_session"
 
   get '/users/:username' => "users#profile"
 
-  get '/users/:username/tours' => "users#tours"
-
   get "log_out" => "sessions#destroy", :as => "log_out"
 
-  get "sign_up" => "users#new", :as => "sign_up"
+  # get "sign_up" => "users#new", :as => "sign_up"
 
 resources :users
 resources :sessions
 
-  get '/tours/new' => "tours#new_session"
+  get '/tours/new' => "tours#new"
 
-  post '/tours/create'=> "tours#added"
+  post '/tours/create'=> "tours#create"
 
   # post '/tours/:tour_id' => "tours#view"
 
