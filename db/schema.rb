@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520150001) do
+ActiveRecord::Schema.define(version: 20140520182922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20140520150001) do
     t.boolean "belgian_ale"
     t.boolean "european_lager"
     t.boolean "american_lager"
+  end
+
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tour_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tours", force: true do |t|
