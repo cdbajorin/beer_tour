@@ -15,6 +15,8 @@
         <div class="beer_image">
           <% if beer.has_key?("labels") %>
             <img src="<%=beer['labels']['icon']%>">
+            <%else%>
+            <img src="http://api.ning.com/files/Mpj3kEIsNIZt1SmJd*FLhm79yrZW-YF7bsXY96TNvvpQz8RqFz3kOFxXzv-5jigTWBH3zJmkDW0CTJPKvQW4qpovlTpvI5XG/bsround64.png">
           <%end%>
         </div>
 

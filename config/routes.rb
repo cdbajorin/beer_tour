@@ -34,6 +34,9 @@ resources :sessions
 
   post '/tours/search' => "tours#favorite"
 
+  get '/tours/:id/delete' => "tours#delete"
+
+
 ##Favorites
 
   get '/favorites/:id' => "favorites#delete"
