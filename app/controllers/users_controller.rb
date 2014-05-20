@@ -47,7 +47,8 @@ def new_session
 
   def tour
     @user = User.find_by_username(params[:username])
-    @tour = Tour.find_by_id(params[:id])
+    tour = Tour.find_by_id(params[:id])
+    @tour_array = tour.stops.split(",")
     binding.pry
   end
 

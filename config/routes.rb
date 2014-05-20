@@ -27,6 +27,9 @@ resources :sessions
 
   post '/tours/create'=> "tours#create"
 
+  get '/tours/search' => "tours#search"
+
+  post '/tours/search' => "tours#show"
   # post '/tours/:tour_id' => "tours#view"
 
     # search form when creating tours. Will be able
