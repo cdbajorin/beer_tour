@@ -35,7 +35,6 @@ def new_session
     end
   end
 
-
   def profile
     @user = User.find_by_username(params[:username])
     tours = Tour.all
@@ -52,6 +51,11 @@ def new_session
         @favorites << favorite
       end
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_url, :notice => "Logged out!"
   end
 
   def tour

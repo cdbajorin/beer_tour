@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   # end
 
   def convert
-    binding.pry
     address = "#{self.street_address}, #{self.city}, #{self.state}, #{self.zipcode}"
     self.latitude = Geocoder.coordinates(address)[0]
     self.longitude = Geocoder.coordinates(address)[1]

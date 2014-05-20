@@ -32,6 +32,7 @@
       <% user = User.find(tour.user_id) %>
       <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %> by <%= link_to "#{user.username}", "/users/#{user.username}"%></p>
       <p><%= tour.description %></p>
+      <p> <%= link_to "delete?", "/favorites/#{favorite.id}" %>
     </li>
     <%end%>
   </ul>
