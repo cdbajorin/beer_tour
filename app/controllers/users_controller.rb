@@ -45,6 +45,13 @@ def new_session
         @tours << tour
       end
     end
+    favorites = Favorite.all
+    @favorites = []
+    favorites.each do |favorite|
+      if favorite.user_id == @user.id
+        @favorites << favorite
+      end
+    end
   end
 
   def tour

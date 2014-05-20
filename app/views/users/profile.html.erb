@@ -24,6 +24,20 @@
 </p>
 
 <div class="user_favorites">
+  <% if @favorites %>
+  <ul>
+    <% @favorites.each do |favorite| %>
+    <li>
+      <% tour = Tour.find(favorite.tour_id) %>
+      <% user = User.find(tour.user_id) %>
+      <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %> by <%= link_to "#{user.username}", "/users/#{user.username}"%></p>
+      <p><%= tour.description %></p>
+    </li>
+    <%end%>
+  </ul>
+  <% else %>
+  <h4>No favorites added</h4>
+  <%end%>
 </div>
 
 <div class="user_tours">

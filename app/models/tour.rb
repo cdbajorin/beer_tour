@@ -1,7 +1,7 @@
 class Tour < ActiveRecord::Base
 
   belongs_to :users
-  has_many :likes
+  has_many :favorites
 
   def self.update_distances(user)
     Tour.all.each do |tour|

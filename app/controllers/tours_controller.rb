@@ -24,16 +24,10 @@ class ToursController < ApplicationController
   end
 
   def favorite
-    binding.pry
-
     tours_array = params[:tour_list]
     tours_array.each do |tour|
-      Tour.find(tour).user_id
-      binding.pry
-      favorite = Favorite.new(tour_id: tour, user_id: Tour.find(tour).user_id)
-      binding.pry
+      Favorite.create({tour_id: tour, user_id: current_user.id})
     end
-
-  # def results
+    redirect_to "/users/#{current_user.username}", :notice => "Favorites added!"
   end
 end
