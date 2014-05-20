@@ -21,3 +21,22 @@
   <% if @user.bio != "" %>
   <%= @user.bio %>
   <%end%>
+</p>
+
+<div class="user_favorites">
+</div>
+
+<div class="user_tours">
+  <% if @tours %>
+  <ul>
+    <% @tours.each do |tour| %>
+    <li>
+      <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %></p>
+      <p><%= tour.description %></p>
+    </li>
+    <%end%>
+  </ul>
+  <% else %>
+  <h4>No tours created</h4>
+  <%end%>
+</div>

@@ -8,12 +8,14 @@ class ToursController < ApplicationController
   end
 
   def create
-    binding.pry
     tour = Tour.new
     tour.name = params[:name]
     tour.stops = params[:stops]
     tour.description = params[:description]
     tour.user_id = current_user.id
+    tour.origin_lat = current_user.latitude
+    tour.origin_long = current_user.longitude
+    binding.pry
     tour.save
     redirect_to "/users/#{current_user.username}", :notice => "Tour created!"
   end

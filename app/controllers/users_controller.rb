@@ -8,13 +8,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # binding.pry
-    # @user.generate_new_user(user_params)
     @user.convert
     if @user.save
-      redirect_to user_login_path, :notice => "signed up!"
+      redirect_to users_login_path, :notice => "signed up!"
     else
-      # render: "new"
+      flash.now.alert = "Username taken!"
+      render "new"
     end
   end
 
@@ -24,7 +23,7 @@ class UsersController < ApplicationController
 
 def new_session
     user = User.find_by_username(params[:username])
-    success = user.authenticate(params[:username], params[:password])
+    success = user.authenticate(params[:password])
     if success
       session[:user_id] = user.id
       redirect_to "/users/#{user.username}", :notice => "Logged in!"
@@ -37,6 +36,19 @@ def new_session
 
   def profile
     @user = User.find_by_username(params[:username])
+    tours = Tour.all
+    @tours = []
+    tours.each do |tour|
+      if tour.user_id == @user.id
+        @tours << tour
+      end
+    end
+  end
+
+  def tour
+    @user = User.find_by_username(params[:username])
+    @tour = Tour.find_by_id(params[:id])
+    binding.pry
   end
 
   private

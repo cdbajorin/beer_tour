@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/users/:username' => "users#profile"
 
+  get '/users/:username/:id' => "users#tour"
+
   get "log_out" => "sessions#destroy", :as => "log_out"
 
   # get "sign_up" => "users#new", :as => "sign_up"
