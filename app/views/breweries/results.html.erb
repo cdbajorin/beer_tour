@@ -7,7 +7,8 @@
       <li>
         <%= check_box_tag("brewery_list[]", brewery.b_name_id) %>
         <a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
-        <p><%= brewery.street_address %>
+        <p>
+          <%= brewery.street_address %><br>
           <%= brewery.city %>, <%=brewery.state %> <%= brewery.zipcode %>
         </p>
       </li>

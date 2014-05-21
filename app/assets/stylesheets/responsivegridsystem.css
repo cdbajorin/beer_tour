@@ -148,7 +148,8 @@ margin-bottom : 1.5em;
 font-size : 1em; /* 16 / 16 = 1 */ }
 
 p {
-hyphens : auto;  }
+hyphens : auto;
+}
 
 
 p.introtext {
@@ -186,7 +187,9 @@ font-size: 1.5em; /* 24 / 16 */
 ul,
 ol {
 margin : 0 0 1.5em 0;
-padding : 0 0 0 24px; }
+padding : 0 0 0 24px;
+list-style-type: none;
+}
 
 li ul,
 li ol {
@@ -882,7 +885,37 @@ p {
 -webkit-hyphenate-limit-before : 3;
 -moz-hyphens : auto; }
 
+/* USER STYLES */
 
-ul {
-list-style-type: none;
+.left_col {
+	text-align: left;
+}
+
+.right_col {
+	text-align: right;
+}
+
+.left_block {
+	text-align: left;
+	margin: 0 auto;
+	width: 25%;
+}
+
+.right_block {
+	text-align: right;
+	margin: 0 auto;
+	width: 25%;
+}
+
+.nav_login_block {
+}
+.nav_bar {
+	margin: 0 auto;
+	position: center;
+	width: 30%;
+}
+
+
+.username_name {
+	margin-bottom: 10px;
 }

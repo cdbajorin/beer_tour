@@ -32,6 +32,7 @@ def new_session
     if success
       session[:user_id] = user.id
       Tour.update_distances(current_user)
+      Brewery.update_distances(current_user)
       redirect_to "/users/#{user.username}", :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"

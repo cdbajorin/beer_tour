@@ -23,43 +23,44 @@
   <%end%>
 </p>
 <div class="section group">
-<div class="span_1_of_2">
-  <h3>Favorites</h3>
-  <% if @favorites %>
-  <ul>
-    <% @favorites.each do |favorite| %>
-    <li>
-      <% tour = Tour.find(favorite.tour_id) %>
-      <% user = User.find(tour.user_id) %>
-      <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %> by <%= link_to "#{user.username}", "/users/#{user.username}"%></p>
-      <p><%= tour.description %></p>
-      <p> <%= link_to "delete?", "/favorites/#{favorite.id}/delete" %>
-    </li>
-    <%end%>
-  </ul>
-  <% else %>
-  <h4>No favorites added</h4>
-  <%end%>
-</div>
 
-
-<div class="span_2_of_2">
-  <h3>Tours</h3>
-  <% if @tours %>
-  <ul>
-    <% @tours.each do |tour| %>
-    <li>
-      <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %></p>
-      <p><%= tour.description %></p>
-      <% if current_user.id == @user.id %>
-      <p><%= link_to "delete?", "/tours/#{tour.id}/delete"%></p>
-        <%end%>
-    </li>
+  <div class="col span_2_of_2">
+    <ul class="left_block">
+    <h3><u>Favorites</u></h3>
+    <% if @favorites %>
+      <% @favorites.each do |favorite| %>
+      <li class="left_col">
+        <% tour = Tour.find(favorite.tour_id) %>
+        <% user = User.find(tour.user_id) %>
+        <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %> by <%= link_to "#{user.username}", "/users/#{user.username}"%></p>
+        <p><%= tour.description %></p>
+        <p> <%= link_to "delete?", "/favorites/#{favorite.id}/delete" %>
+      </li>
+      <%end%>
+    </ul>
+    <% else %>
+    <h4>No favorites added</h4>
     <%end%>
-  </ul>
-  <% else %>
-  <h4>No tours created</h4>
-  <%end%>
-</div>
+  </div>
+
+  <div class="col span_1_of_2">
+    <ul class="right_block">
+    <h3><u>Tours</u></h3>
+    <% if @tours %>
+      <% @tours.each do |tour| %>
+      <li class="right_col">
+        <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %></p>
+        <p><%= tour.description %></p>
+        <% if current_user.id == @user.id %>
+        <p><%= link_to "delete?", "/tours/#{tour.id}/delete"%></p>
+          <%end%>
+      </li>
+      <%end%>
+    </ul>
+    <% else %>
+    <h4>No tours created</h4>
+    <%end%>
+  </div>
+
 </div>
 
