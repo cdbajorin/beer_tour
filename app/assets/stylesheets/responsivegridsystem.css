@@ -887,6 +887,19 @@ p {
 
 /* USER STYLES */
 
+.header_beer {
+	height: 260px;
+	margin-bottom: 35px
+}
+
+h1 {
+	margin-bottom: 30px;
+}
+
+.navigation {
+	padding-top: 80px;
+	font-size: 1.8em;
+}
 .left_col {
 	text-align: left;
 }
@@ -908,14 +921,35 @@ p {
 }
 
 .nav_login_block {
+	margin: 0 auto;
+	width: 80%;
 }
 .nav_bar {
-	margin: 0 auto;
-	position: center;
-	width: 30%;
 }
-
-
+.logged_in {
+	margin-top: -40px;
+	margin-left: 10%;
+	float: left;
+}
 .username_name {
 	margin-bottom: 10px;
+}
+
+body {
+	background: url("http://www.twitterevolutions.com/bgs/beer-pattern.jpg");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 110%;
+}
+
+.brewery_summary {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.beer_name {
+	font-size: 1.5em;
+}
+.beer_image {
+	float: left;
 }

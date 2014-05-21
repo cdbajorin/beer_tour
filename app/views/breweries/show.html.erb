@@ -12,18 +12,19 @@
   <ul>
     <% @beer_hash["data"].each do |beer| %>
       <% if beer.has_key?("style") %>
-        <div class="beer_image">
+
+
+        <li>
+          <div class="beer_name">
+            <%= beer["name"] %>
+          </div>
+           <div class="beer_image">
           <% if beer.has_key?("labels") %>
             <img src="<%=beer['labels']['icon']%>">
             <%else%>
             <img src="http://api.ning.com/files/Mpj3kEIsNIZt1SmJd*FLhm79yrZW-YF7bsXY96TNvvpQz8RqFz3kOFxXzv-5jigTWBH3zJmkDW0CTJPKvQW4qpovlTpvI5XG/bsround64.png">
           <%end%>
         </div>
-
-        <li>
-          <div class="beer_name">
-            <%= beer["name"] %>
-          </div>
 
           <p class="beer_style_and_description">
 
@@ -47,4 +48,3 @@
   <p>We apologize, our server is experiencing issues. Please try again in a few moments.</p>
 <%end%>
 </div>
-

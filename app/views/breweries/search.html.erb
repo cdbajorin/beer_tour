@@ -1,3 +1,4 @@
+<div class="div_for_overflow">
 <p><%= form_tag("/breweries/search/results", method: "get") do %>
   <%= label_tag(:distance, "Distance (max 100):") %>
   <%= text_field_tag :distance %> <br>
@@ -26,3 +27,4 @@
   <%= submit_tag("Search") %>
   <%end%>
 </p>
+<div class="div_for_overflow">
