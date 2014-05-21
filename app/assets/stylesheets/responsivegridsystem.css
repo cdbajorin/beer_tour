@@ -893,6 +893,7 @@ p {
 }
 
 h1 {
+	font-family: 'Corben', cursive;
 	margin-bottom: 30px;
 }
 
@@ -936,20 +937,74 @@ h1 {
 }
 
 body {
-	background: url("http://www.twitterevolutions.com/bgs/beer-pattern.jpg");
+	background: url("http://www.twitterevolutions.com/bgs/beer-pattern.jpg") fixed;
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-size: 110%;
 }
 
 .brewery_summary {
+	position: relative;
 	margin: 0 auto;
-	width: 60%;
+	width: 66.6666%;
+	margin-bottom: 50px;
+}
+.beer_results {
+	height: 750px;
+	overflow: auto;
+
 }
 
+.beer_results li {
+	margin-bottom: 50px;
+}
 .beer_name {
 	font-size: 1.5em;
 }
 .beer_image {
 	float: left;
+}
+
+.brewery_list {
+	position: relative;
+	margin: 0 auto;
+	width: 25%;
+	margin-bottom: 50px;
+}
+
+.submit_button {
+	padding-top: 25px;
+	margin-bottom: 25px;
+}
+
+.brewery_ul {
+	height: 750px;
+	overflow: auto;
+}
+
+.brew_list_name {
+	font-size: 1.5em;
+}
+
+a:visited {
+	color:  #0B1CD9;
+}
+a:link {
+	color: #0A7A6D;
+}
+
+
+.brewery_each {
+	padding-top: 10px;
+	border-bottom: solid 1px;
+	margin-bottom: 10px;
+}
+
+
+
+
+.brewery_checkbox {
+		width: 25px;
+	margin: -10px 0px;
+	position: relative;
 }
