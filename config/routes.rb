@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get '/users/:username/:id' => "users#tour"
 
-  get '/favorites/:id' => "favorites#delete"
+  get '/favorites/:id/delete' => "favorites#delete"
 
 resources :users
 resources :sessions

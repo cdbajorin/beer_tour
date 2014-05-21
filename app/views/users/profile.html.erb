@@ -22,8 +22,9 @@
   <%= @user.bio %>
   <%end%>
 </p>
+<div class="section group">
 <div class="span_1_of_2">
-<div class="user_favorites">
+  <h3>Favorites</h3>
   <% if @favorites %>
   <ul>
     <% @favorites.each do |favorite| %>
@@ -32,7 +33,7 @@
       <% user = User.find(tour.user_id) %>
       <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %> by <%= link_to "#{user.username}", "/users/#{user.username}"%></p>
       <p><%= tour.description %></p>
-      <p> <%= link_to "delete?", "/favorites/#{favorite.id}" %>
+      <p> <%= link_to "delete?", "/favorites/#{favorite.id}/delete" %>
     </li>
     <%end%>
   </ul>
@@ -40,16 +41,19 @@
   <h4>No favorites added</h4>
   <%end%>
 </div>
-</div>
+
 
 <div class="span_2_of_2">
+  <h3>Tours</h3>
   <% if @tours %>
   <ul>
     <% @tours.each do |tour| %>
     <li>
       <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %></p>
       <p><%= tour.description %></p>
-      <p><%= link_to "delete?", "/tours/#{tour.id}/delete"%>
+      <% if current_user.id == @user.id %>
+      <p><%= link_to "delete?", "/tours/#{tour.id}/delete"%></p>
+        <%end%>
     </li>
     <%end%>
   </ul>
@@ -57,3 +61,5 @@
   <h4>No tours created</h4>
   <%end%>
 </div>
+</div>
+
