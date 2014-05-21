@@ -1,12 +1,12 @@
 <div class="tour_form">
   <%= form_tag '/tours/create' do %>
-  <%= text_field_tag "name", nil, {value: nil, placeholder: "name" } %>
-  <%= text_area_tag "description", nil, { placeholder: "description" } %>
+  <p class="tour_create_name"><%= text_field_tag "name", nil, {value: nil, placeholder: "name" } %><br>
+  <p class="tour_create_description"><%= text_area_tag "description", nil, { placeholder: "description" } %></p>
   <%= hidden_field_tag "stops", (@tour_string) %>
-  <%= submit_tag "create" %>
+  <p class="tour_submit_button"><%= submit_tag "create" %></p>
 
 
-<ul class="tour_summary"
+<ul class="tour_summary">
   <% @tour_array.each do |b| %>
   <% brewery = Brewery.find_by_b_name_id(b) %>
   <div class="brewery_each">

@@ -8,13 +8,18 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.convert
-    if @user.save
-      redirect_to users_login_path, :notice => "signed up!"
-    else
-      flash.now.alert = "Username taken!"
-      render "new"
-    end
+    # if @user.zipcode.present?
+      if @user.save
+        @user.convert
+        redirect_to users_login_path, :notice => "signed up!"
+      else
+        flash.now.alert = "Username taken!"
+        render "new"
+      end
+    # else
+    #   flash.now.alert = "Please enter a zip code"
+    #   render "new"
+    # end
   end
 
   def login
@@ -28,7 +33,6 @@ def new_session
       session[:user_id] = user.id
       Tour.update_distances(current_user)
       redirect_to "/users/#{user.username}", :notice => "Logged in!"
-
     else
       flash.now.alert = "Invalid email or password"
       render "login"
@@ -68,7 +72,7 @@ def new_session
 
     def user_params
 
-      params.require(:user).permit(:password, :street_address, :city, :state, :zipcode, :username, :bio, :password_confirmation)
+      params.require(:user).permit(:password, :street_address, :city, :state, :zipcode, :username, :password_confirmation) #  :bio,
     end
 
 end

@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
   <title>BeerTour</title>
+  <meta name="Beer Tour" content="beer and stuff">
+  <link rel="stylesheet" href="css/html5reset.css" media="all">
+  <link rel="stylesheet" href="css/responsivegridsystem.css" media="all">
+  <link rel="stylesheet" href="css/col.css" media="all">
+  <link rel="stylesheet" href="css/2cols.css" media="all">
+  <link rel="stylesheet" media="only screen and (max-width: 1024px) and (min-width: 769px)" href="/css/1024.css">
+  <link rel="stylesheet" media="only screen and (max-width: 768px) and (min-width: 481px)" href="/css/768.css">
+  <link rel="stylesheet" media="only screen and (max-width: 480px)" href="/css/480.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
   <h1>Beer Tour</h1>
@@ -15,12 +29,15 @@
         <%= link_to "Search tours", tours_search_path %>
         <%= link_to "New tour", breweries_search_path %>
         <div class="login">
-          Logged in as <%= current_user.username %>.
-          <%= link_to "Log out", users_logout_path %>
+          <p>Logged in as <%= current_user.username %>.
+            <%= link_to "Log out", users_logout_path %>
+          </p>
         </div>
       <% else %>
-        <%= link_to "Sign up", users_new_path %> or
-        <%= link_to "Log in", users_login_path %>
+        <div class="sign_log_in">
+          <%= link_to "Sign up", users_new_path %> or
+          <%= link_to "Log in", users_login_path %>
+        </div>
       <% end %>
     </div>
 
@@ -30,6 +47,21 @@
   </nav>
 
 <%= yield %>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
+
+  <!--[if (lt IE 9) & (!IEMobile)]>
+  <script src="js/selectivizr-min.js"></script>
+  <![endif]-->
+
+
+  <!-- More Scripts-->
+  <script src="js/responsivegridsystem.js"></script>
+
+  <script src="js/modernizr-2.5.3-min.js"></script>
 
 </body>
 </html>

@@ -22,7 +22,7 @@
   <%= @user.bio %>
   <%end%>
 </p>
-
+<div class="span_1_of_2">
 <div class="user_favorites">
   <% if @favorites %>
   <ul>
@@ -40,8 +40,9 @@
   <h4>No favorites added</h4>
   <%end%>
 </div>
+</div>
 
-<div class="user_tours">
+<div class="span_2_of_2">
   <% if @tours %>
   <ul>
     <% @tours.each do |tour| %>
