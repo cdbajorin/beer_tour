@@ -1,19 +1,28 @@
 <div class="favorites_list">
 <%= form_tag("/tours/search", method: "post") do %>
-  <%= submit_tag("Add to Favorites") %>
+  <div class="submit_button">
+    <%= submit_tag("Add to Favorites") %>
+  </div>
+
     <ul>
        <% @results.each do |tour| %>
        <div class="favorites_each">
         <li>
           <% tour_owner = User.find(tour.user_id) %>
-          <%= check_box_tag("tour_list[]", tour.id) %>
-          <a href="/users/<%= tour_owner.username %>/<%= tour.id %>"><%=tour.name %><a>
-          <p><%= tour.description %>
-          </p>
+            <a class="brew_list_name" href="/users/<%= tour_owner.username %>/<%= tour.id %>"><%=tour.name %><a>
+
+          <div class="brewery_checkbox">
+            <%= check_box_tag("tour_list[]", tour.id) %>
+          </div>
+
+          <div class="breweries_address_results">
+            <p>
+              <%= tour.description %>
+            </p>
+          </div>
         </li>
       </div>
       <%end%>
     </ul>
-    <%= submit_tag("Add to Favorites") %>
     <%end%>
 </div>

@@ -987,10 +987,10 @@ body {
 }
 
 a:visited {
-	color:  #0B1CD9;
+	color: #0A7A6D;
 }
 a:link {
-	color: #0A7A6D;
+	color: #0B1CD9;
 }
 
 
@@ -1029,4 +1029,19 @@ a:link {
 
 #flash_notice {
 	padding-top:15px;
+}
+
+.favorites_list {
+	margin: 0 auto;
+	padding-top: 15px;
+	width: 25%;
+}
+
+.favorites_each  {
+	padding-top: 15px;
+	border-bottom: 1px solid;
+}
+
+.breweries_address_results {
+	color: black;
 }
