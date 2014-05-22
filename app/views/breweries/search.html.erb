@@ -1,30 +1,24 @@
-<div class="div_for_overflow">
+<div class="search_form">
 <p><%= form_tag("/breweries/search/results", method: "get") do %>
   <%= label_tag(:distance, "Distance (max 100):") %>
   <%= text_field_tag :distance %> <br>
 
   <%= radio_button_tag(:beer, "british_ale") %>
   <%= label_tag(:beer_BA, "British Ale") %>
-
   <%= radio_button_tag(:beer, "irish_ale") %>
   <%= label_tag(:beer_IA, "Irish Ale") %>
-
   <%= radio_button_tag(:beer, "american_ale") %>
   <%= label_tag(:beer_AA, "American Ale") %>
-
   <%= radio_button_tag(:beer, "german_ale") %>
-  <%= label_tag(:beer_GA, "German Ale") %><br>
-
+  <%= label_tag(:beer_GA, "German Ale") %>
   <%= radio_button_tag(:beer, "belgian_ale") %>
   <%= label_tag(:beer_BA, "Belgian Ale") %>
-
   <%= radio_button_tag(:beer, "european_lager") %>
   <%= label_tag(:beer_EL, "European Lager") %>
-
   <%= radio_button_tag(:beer, "american_lager") %>
-  <%= label_tag(:beer_AL, "American Lager") %><br>
+  <%= label_tag(:beer_AL, "American Lager") %>
 
   <%= submit_tag("Search") %>
   <%end%>
 </p>
-<div class="div_for_overflow">
+

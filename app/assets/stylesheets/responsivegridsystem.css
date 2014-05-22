@@ -888,8 +888,8 @@ p {
 /* USER STYLES */
 
 .header_beer {
-	height: 260px;
-	margin-bottom: 35px
+	height: 180px;
+	margin-bottom: 45px;
 }
 
 h1 {
@@ -898,8 +898,8 @@ h1 {
 }
 
 .navigation {
-	padding-top: 80px;
-	font-size: 1.8em;
+	padding-top: 20px;
+	font-size: 1.2em;
 }
 .left_col {
 	text-align: left;
@@ -928,7 +928,7 @@ h1 {
 .nav_bar {
 }
 .logged_in {
-	margin-top: -40px;
+	margin-top: -26px;
 	margin-left: 10%;
 	float: left;
 }
@@ -950,7 +950,7 @@ body {
 	margin-bottom: 50px;
 }
 .beer_results {
-	height: 750px;
+	height: 525px;
 	overflow: auto;
 
 }
@@ -968,7 +968,7 @@ body {
 .brewery_list {
 	position: relative;
 	margin: 0 auto;
-	width: 25%;
+	width: 40%;
 	margin-bottom: 50px;
 }
 
@@ -978,7 +978,7 @@ body {
 }
 
 .brewery_ul {
-	height: 750px;
+	height: 520px;
 	overflow: auto;
 }
 
@@ -1000,11 +1000,33 @@ a:link {
 	margin-bottom: 10px;
 }
 
+.brewery_each p {
+	color: black;
+	font-weight: bold;
+}
 
 
 
 .brewery_checkbox {
-		width: 25px;
+	width: 25px;
 	margin: -10px 0px;
 	position: relative;
+}
+
+.search_form {
+	padding-top:10px;
+	margin: 0 auto;
+	width: 15%;
+	font-size: 1.1em;
+}
+.radio_left {
+	float: left;
+}
+
+.user {
+	padding-top: 10px;
+}
+
+#flash_notice {
+	padding-top:15px;
 }
