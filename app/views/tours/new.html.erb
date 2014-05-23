@@ -5,8 +5,8 @@
   <%= hidden_field_tag "stops", (@tour_string) %>
   <p class="tour_submit_button"><%= submit_tag "create" %></p>
 
-
-<ul class="tour_summary">
+<div class="tour_ul">
+<ul>
   <% @tour_array.each do |b| %>
   <% brewery = Brewery.find_by_b_name_id(b) %>
   <div class="brewery_each">
@@ -22,5 +22,6 @@
   </div>
   <%end%>
 </ul>
+</div>
 <% end %>
 </div>

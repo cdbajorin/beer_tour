@@ -982,6 +982,26 @@ body {
 	overflow: auto;
 }
 
+.tour_ul {
+	height: 420px;
+	overflow: auto;
+}
+
+.tour_form{
+	height: 400px;
+	padding-top:10px;
+	margin: 0 auto;
+	width: 25%;
+	font-size: 1.1em;
+
+}
+.tour_summary {
+	height: 420px;
+	overflow: auto;
+}
+
+
+
 .brew_list_name {
 	font-size: 1.5em;
 }
