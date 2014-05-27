@@ -8,6 +8,7 @@ class ToursController < ApplicationController
   end
 
   def create
+    binding.pry
     tour = Tour.new
     tour.name = params[:name]
     tour.stops = params[:stops]
