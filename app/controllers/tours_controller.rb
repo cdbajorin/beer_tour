@@ -1,5 +1,7 @@
 class ToursController < ApplicationController
 
+  # before_action :
+
   def new
     @tour_array = params[:brewery_list]
     @tour_string = @tour_array.join(",")

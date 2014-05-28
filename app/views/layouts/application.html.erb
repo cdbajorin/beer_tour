@@ -34,13 +34,13 @@
         </div>
         <div class="logged_in">
           Logged in as <%= current_user.username %> -
-            <%= link_to "Log out", session_path %>
+            <%= link_to "Log out", session_path, method: "DELETE" %>
         </div>
       </div>
       <% else %>
         <div class="sign_log_in">
           <%= link_to "Sign up", new_user_path %> or
-          <%= link_to "Log in", users_login_path %>
+          <%= link_to "Log in", new_session_path %>
         </div>
       <% end %>
     <% flash.each do |name, msg| %>

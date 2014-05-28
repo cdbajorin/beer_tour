@@ -26,19 +26,19 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-def new_session
-    user = User.find_by_username(params[:username])
-    success = user.authenticate(params[:password])
-    if success
-      session[:user_id] = user.id
-      Tour.update_distances(current_user)
-      Brewery.update_distances(current_user)
-      redirect_to "/users/#{user.username}", :notice => "Logged in!"
-    else
-      flash.now.alert = "Invalid email or password"
-      render "login"
-    end
-  end
+  # def new_session
+  #   user = User.find_by_username(params[:username])
+  #   success = user.authenticate(params[:password])
+  #   if success
+  #     session[:user_id] = user.id
+  #     Tour.update_distances(current_user)
+  #     Brewery.update_distances(current_user)
+  #     redirect_to "/users/#{user.username}", :notice => "Logged in!"
+  #   else
+  #     flash.now.alert = "Invalid email or password"
+  #     render "login"
+  #   end
+  # end
 
   def show
     @user = User.find_by_username(params[:username])
@@ -58,10 +58,10 @@ def new_session
     end
   end
 
-  def destroy
-    session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
-  end
+  # def destroy
+  #   session[:user_id] = nil
+  #   redirect_to root_url, :notice => "Logged out!"
+  # end
 
   def tour
     @user = User.find_by_username(params[:username])

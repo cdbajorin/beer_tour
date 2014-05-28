@@ -2,18 +2,11 @@ Rails.application.routes.draw do
 
 root to: "users#index"
 
-# get "/", to: "users#new", as: "new_user"
-
 get "/users/:username", to: "users#show", as: "user"
 resources :users, except: [:show] do
-  # collection do
-    # get ":username", to: "users#show", as: "user"
-  # end
   resources :favorites, only: [:create, :destroy]
   resources :tours, only: [:edit, :show, :update, :destroy]
 end
-
-
 
 resources :tours, only: [:new, :create] do
   collection do
@@ -24,52 +17,8 @@ end
 get "/breweries/search", to: "breweries#search", as: "search_breweries"
 get "/breweries/results", to: "breweries#results", as: "breweries_results"
 
-
-# resources :breweries do
-#   collection do
-#     get "search"
-#     get "results"
-#   end
-# end
-
 resource :session, only: [:create, :destroy]
 get "/login", to: "sessions#new", as: "new_session"
-
-
-######### PJ'S ROUTES ########
-
-# root to: "users#index"
-
-#   resources :users, except: [:new] do
-#     resources :favorites do
-#       collection do
-#         get "search"
-#       end
-#     end
-#     resources :tours do
-#       collection do
-#         get "search"
-#       end
-#     end
-#   end
-#   get "/signup", to: "users#new", as: "new_user"
-
-#   resources :breweries, only: [:index, :show] do
-#     collection do
-#       get "search"
-#     end
-#     member do
-#       get "take_a_look"
-#     end
-#   end
-
-#   resource :session, only: [:create, :destroy]
-#   get "/login", to: "sessions#new", as: "new_session"
-
-
-
-
-########### END PJ ###########
 
 
 ######### ORIGINAL ROUTES ############
