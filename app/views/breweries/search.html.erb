@@ -1,5 +1,5 @@
 <div class="search_form">
-<p><%= form_tag("/breweries/search/results", method: "get") do %>
+<p><%= form_tag(breweries_results_path, method: "get") do %>
   <%= label_tag(:distance, "Distance (max 100):") %>
   <%= text_field_tag :distance %> <br>
 

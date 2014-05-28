@@ -40,7 +40,7 @@ def new_session
     end
   end
 
-  def profile
+  def show
     @user = User.find_by_username(params[:username])
     tours = Tour.all
     @tours = []
