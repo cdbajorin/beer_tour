@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
   end
 
 
@@ -25,12 +24,12 @@ class SessionsController < ApplicationController
     redirect_to root_url, :notice => "Logged out!"
   end
 
-  private
+  # private
 
-  def session_params
+  # def session_params
 
-    params.require(:session).permit(:password, :username)
-  end
+  #   params.require(:user).permit(:password, :username)
+  # end
 
 
 end

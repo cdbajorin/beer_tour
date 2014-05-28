@@ -54,7 +54,7 @@
         <p><%= link_to "#{tour.name}", "/users/#{@user.username}/#{tour.id}" %></p>
         <p><%= tour.description %></p>
         <% if current_user.id == @user.id %>
-        <p><%= link_to "delete?", "/tours/#{tour.id}/delete"%></p>
+        <p><%= link_to "delete?", user_tour_path(@user.id, tour.id), method: :delete %></p>
           <%end%>
       </li>
       <%end%>

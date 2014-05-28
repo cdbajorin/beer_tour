@@ -18,7 +18,7 @@ class ToursController < ApplicationController
     tour.origin_lat = current_user.latitude
     tour.origin_long = current_user.longitude
     tour.save
-    redirect_to "/users/#{current_user.username}", :notice => "Tour created!"
+    redirect_to user_path(current_user.username), :notice => "Tour created!"
   end
 
   def search
@@ -30,16 +30,16 @@ class ToursController < ApplicationController
     tours_array.each do |tour|
       Favorite.create({tour_id: tour, user_id: current_user.id})
     end
-    redirect_to "/users/#{current_user.username}", :notice => "Favorites added!"
+    redirect_to user_path(current_user.username), :notice => "Favorites added!"
   end
 
-  def delete
+  def destroy
     favorites = Favorite.where(["tour_id = :id", {id: params[:id]}])
     favorites.each do |fav|
       fav.destroy
     end
     Tour.find(params[:id]).destroy
-    redirect_to "/users/#{current_user.username}", :notice => "Tour deleted!"
+    redirect_to user_path(current_user.username), :notice => "Tour deleted!"
   end
 
 end

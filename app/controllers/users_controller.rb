@@ -22,9 +22,9 @@ class UsersController < ApplicationController
     # end
   end
 
-  def login
-    @user = User.new
-  end
+  # def login
+  #   @user = User.new
+  # end
 
   # def new_session
   #   user = User.find_by_username(params[:username])
@@ -71,9 +71,9 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
+  def user_params
 
-      params.require(:user).permit(:password, :street_address, :city, :state, :zipcode, :username, :password_confirmation) #  :bio,
-    end
+    params.require(:user).permit(:password, :street_address, :city, :state, :zipcode, :username, :password_confirmation) #  :bio,
+  end
 
 end
