@@ -16,7 +16,7 @@ end
 
 get "/breweries/search", to: "breweries#search", as: "search_breweries"
 get "/breweries/results", to: "breweries#results", as: "breweries_results"
-
+get "/breweries/:b_name_id", to: "breweries#show", as: "brewery_show"
 resource :session, only: [:create, :destroy]
 get "/login", to: "sessions#new", as: "new_session"
 

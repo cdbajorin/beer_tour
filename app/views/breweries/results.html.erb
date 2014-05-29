@@ -9,7 +9,7 @@
      <div class="brewery_each">
       <li>
 
-        <a class="brew_list_name" href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
+          <a class="brew_list_name"><%= link_to "#{brewery.name}",  brewery_show_path(brewery.b_name_id)%></a>
         <div class="brewery_checkbox">
           <%= check_box_tag("brewery_list[]", brewery.b_name_id) %>
         </div>
