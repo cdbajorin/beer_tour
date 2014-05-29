@@ -2,11 +2,14 @@ Rails.application.routes.draw do
 
 root to: "users#index"
 
-get "/users/:username", to: "users#show", as: "user"
+# path to users/new is broken, need to switch :username within the
+# controller to :id and use the default routes created by resources
+
 resources :users, except: [:show] do
   resources :favorites, only: [:create, :destroy]
   resources :tours, only: [:edit, :show, :update, :destroy]
 end
+# get "/users/:username", to: "users#show", as: "user"
 
 resources :tours, only: [:new, :create] do
   collection do

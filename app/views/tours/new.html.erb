@@ -11,7 +11,7 @@
   <% brewery = Brewery.find_by_b_name_id(b) %>
   <div class="brewery_each">
     <li>
-      <a href="/breweries/<%= brewery.b_name_id %>"><%=brewery.name %><a>
+      <%= link_to "#{brewery.name}", brewery_show_path(brewery.b_name_id) %>
       <p>
         <%= brewery.street_address %>
       </p>

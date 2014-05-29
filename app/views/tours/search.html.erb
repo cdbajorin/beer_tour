@@ -9,7 +9,9 @@
        <div class="favorites_each">
         <li>
           <% tour_owner = User.find(tour.user_id) %>
-            <a class="brew_list_name" href="/users/<%= tour_owner.username %>/<%= tour.id %>"><%=tour.name %><a>
+            <a class="brew_list_name" href="/users/<%= tour_owner.username %>/<%= tour.id %>"><%=tour.name %>
+              <%= link_to "#{tour.name}", user_tour_path(tour_owner.username, tour.id) %>
+              <a>
 
           <div class="brewery_checkbox">
             <%= check_box_tag("tour_list[]", tour.id) %>

@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
 
 
   def create
-    binding.pry
     user = User.find_by_username(params[:username])
     success = user.authenticate(params[:password])
     if success

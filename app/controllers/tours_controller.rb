@@ -21,6 +21,12 @@ class ToursController < ApplicationController
     redirect_to user_path(current_user.username), :notice => "Tour created!"
   end
 
+  def show
+    @user = User.find_by_username(params[:username])
+    tour = Tour.find_by_id(params[:id])
+    @tour_array = tour.stops.split(",")
+  end
+
   def search
     @results = Tour.where.not(user_id: current_user.id)
   end

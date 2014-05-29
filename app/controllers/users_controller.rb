@@ -63,11 +63,11 @@ class UsersController < ApplicationController
   #   redirect_to root_url, :notice => "Logged out!"
   # end
 
-  def tour
-    @user = User.find_by_username(params[:username])
-    tour = Tour.find_by_id(params[:id])
-    @tour_array = tour.stops.split(",")
-  end
+  # def tour
+  #   @user = User.find_by_username(params[:username])
+  #   tour = Tour.find_by_id(params[:id])
+  #   @tour_array = tour.stops.split(",")
+  # end
 
   private
 
