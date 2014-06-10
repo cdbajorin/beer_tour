@@ -6,15 +6,18 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_username(params[:username])
-    success = user.authenticate(params[:password])
+    success = false
+    if user != nil
+      success = user.authenticate(params[:password])
+    end
+
     if success
       session[:user_id] = user.id
       Tour.update_distances(current_user)
       Brewery.update_distances(current_user)
-      redirect_to "/users/#{user.username}", :notice => "Logged in!"
+      redirect_to user_path, :notice => "Logged in!"
     else
-      flash.now.alert = "Invalid email or password"
-      render "login"
+      redirect_to new_session_path, :notice => "Invalid email or password"
     end
   end
 

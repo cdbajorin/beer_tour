@@ -5,7 +5,7 @@ root to: "users#index"
 # path to users/new is broken, need to switch :username within the
 # controller to :id and use the default routes created by resources
 
-resources :users, except: [:show] do
+resources :users do
   resources :favorites, only: [:create, :destroy]
   resources :tours, only: [:edit, :show, :update, :destroy]
 end

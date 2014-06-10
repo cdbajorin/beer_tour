@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   # end
 
   def show
-    @user = User.find_by_username(params[:username])
+    @user = User.find_by_username(params[:id])
     tours = Tour.all
     @tours = []
     tours.each do |tour|
